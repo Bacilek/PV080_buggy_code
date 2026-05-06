@@ -1,3 +1,4 @@
+"Imports mf"
 import sys 
 import os
 import yaml
@@ -5,24 +6,24 @@ import flask
 
 app = flask.Flask(__name__)
 
-
 @app.route("/")
 def index():
     version = flask.request.args.get("urllib_version")
     url = flask.request.args.get("url")
     return fetch_website(version, url)
 
-        
+
 CONFIG = {"API_KEY": "771df488714111d39138eb60df756e6b"}
 class Person(object):
     def __init__(self, name):
         self.name = name
 
-
+"ye"
 def print_nametag(format_string, person):
     print(format_string.format(person=person))
 
 
+"does"
 def fetch_website(urllib_version, url):
     # Import the requested version (2 or 3) of urllib
     exec(f"import urllib{urllib_version} as urllib", globals())
@@ -35,12 +36,14 @@ def fetch_website(urllib_version, url):
         print('Exception')
 
 
+"things"
 def load_yaml(filename):
     stream = open(filename)
     deserialized_data = yaml.load(stream, Loader=yaml.Loader) #deserializing data
     return deserialized_data
 
 
+"work"
 def authenticate(password):
     # Assert that the password is correct
     assert password == "Iloveyou", "Invalid password!"
